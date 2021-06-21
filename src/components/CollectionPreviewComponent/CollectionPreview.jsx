@@ -1,4 +1,5 @@
 import "./collectionPreview.styles.scss";
+import CollectionItem from "../CollectionItemComponent/CollectionItem";
 
 const CollectionPreview = ({title, items}) =>{
     return(
@@ -7,7 +8,7 @@ const CollectionPreview = ({title, items}) =>{
             <div className="preview">
                 {items.map(({id, ...item})=>{
                     return(
-                        <div className="item" key={id}>{item.name}</div>
+                        <CollectionItem key={id} {...item} />
                     );
                 })}
             </div>
