@@ -5,7 +5,6 @@ const HomePage = (props) => {
     console.log(props);
     return (
         <div className="homepage">
-            hello world
             <Directory />
         </div>
     );
