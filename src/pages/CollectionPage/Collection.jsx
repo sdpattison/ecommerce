@@ -5,10 +5,17 @@ import CollectionItem from '../../components/CollectionItemComponent/CollectionI
 import { connect } from 'react-redux';
 import { selectCollection } from '../../redux/shop/shop.selectors';
 
-const Collection = ({ collection }) =>{
+const Collection = ({ collection: { items, title } }) =>{
     return(
         <div className='collection-page'>
-            { collection.title }
+            <span className='title'> { title  } </span>
+            <div className='items'>
+                {
+                    items.map(item =>
+                        <CollectionItem key={item.id} item={ item } />
+                    )
+                }
+            </div>
         </div>
     );
 }
